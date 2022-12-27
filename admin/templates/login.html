@@ -1,0 +1,33 @@
+{% extends 'base_admin.html' %}
+
+{% block title %}
+Главная
+{% endblock %}
+
+{% block body %}
+<div class="index">
+    <h1>Авторизация</h1>
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title">
+      </div>
+        <form action="" method="post" role="form" class="eform mt-4" >
+              {% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{ cat }}"> {{msg}}</div>
+    {% endfor %}
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <input type="text" name="login" class="form-control" id="name_of_comand" placeholder="Введите логин" required>
+          </div>
+          <div class="col-md-6 form-group mt-3 mt-md-0">
+            <input type="text" class="form-control" name="psw" id="achivements" placeholder="Введите пароль" required>
+          </div>
+        </div>
+        <div class="my-3">
+        </div>
+        <div class="text-center"><button type="submit">Авторизоваться</button></div>
+        </form>
+    </div>
+  </section>
+</div>
+{% endblock %}

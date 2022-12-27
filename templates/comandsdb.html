@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+{% block title %}
+Ура!
+{% endblock %}
+
+{% block body %}
+<style>
+.error-template {padding-top: 150px; text-align: center;}
+.error-actions {margin-top:15px; margin-bottom:15px;}
+.error-actions .btn { margin-right:10px; }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="error-template">
+                <h1>Список команд добавлено</h1>
+                <div class="error-actions">
+                    <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg">Вернуться на главную</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

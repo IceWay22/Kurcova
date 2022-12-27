@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Комманды
+{% endblock %}
+
+{% block body %}
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title">
+      </div>
+        <form action="" method="post" role="form" class="eform mt-4" >
+              {% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{ cat }}"> {{msg}}</div>
+    {% endfor %}
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <input type="text" name="name_of_comand" class="form-control" id="name_of_comand" placeholder="Название команды" required>
+          </div>
+          <div class="col-md-6 form-group mt-3 mt-md-0">
+            <input type="text" class="form-control" name="achivements" id="achivements" placeholder="Достижения комманды" required>
+          </div>
+        </div>
+        <div class="form-group mt-3">
+          <input type="text" class="form-control" name="identif" id="identif" placeholder="Идентификатор комманды" required>
+        </div>
+        <div class="form-group mt-3">
+          <textarea class="form-control" name="sostav" rows="10" placeholder="Состав комманды" required></textarea>
+        </div>
+        <div class="my-3">
+        </div>
+        <div class="text-center"><button type="submit">Добавить комманду</button></div>
+        </form>
+    </div>
+  </section>
+{% endblock %}
